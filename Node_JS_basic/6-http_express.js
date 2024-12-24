@@ -1,13 +1,14 @@
-import express from 'express';
-import controllerRouting from './routes/index';
+const express = require('express');
 
 const app = express();
 const port = 1245;
 
-controllerRouting(app);
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
+});
 
 app.listen(port, () => {
   //   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-export default app;
+module.exports = app;
